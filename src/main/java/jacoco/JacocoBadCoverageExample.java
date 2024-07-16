@@ -2,18 +2,17 @@ package jacoco;
 
 public class JacocoBadCoverageExample {
 
-	public Pojo handleConnection(AutoClosableFactory autoClosableFactory) {
-
-		var pojo = new Pojo();
+	public String handleConnection(AutoClosableFactory autoClosableFactory) {
 
 		try (var autoClosable = autoClosableFactory.create()) {
 			if(null == autoClosable) {
-				return pojo;
+				return "";
 			}
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return pojo;
+		return "";
 	}
 }
